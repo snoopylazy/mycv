@@ -1,6 +1,11 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Sin Thamonthy Portfolio</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Sin Thamonthy | Full-Stack Developer, Battambang</title>
+<meta name="description" content="Portfolio of Sin Thamonthy, a full-stack developer in Battambang, Cambodia. Vue, Laravel, Node and Flutter apps: HR, check-in, POS and government systems.">
+<meta name="theme-color" content="#2038FF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sin Thamonthy | Full-Stack Developer">
+<meta property="og:description" content="Web and mobile systems built with Vue, Laravel, Node and Flutter. Based in Battambang, Cambodia.">
+<meta name="claude:viewport-fit-sides" content="cover"></head><body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: oversized name over a ruled index of work; project rows invert to the accent on hover. */
@@ -60,8 +65,11 @@ section { padding-top: clamp(40px, 7vw, 88px); }
 .work { list-style: none; margin: 0; padding: 0; }
 .row { display: grid; grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.1fr) 90px; gap: 20px; align-items: baseline;
   padding: 26px 12px; border-bottom: 1px solid var(--line); transition: background .15s, color .15s; }
-.row:hover { background: var(--accent); color: var(--on-accent); }
-.row:hover .muted { color: inherit; }
+a.row { color: inherit; text-decoration: none; }
+a.row:hover, a.row:focus-visible { background: var(--accent); color: var(--on-accent); outline-offset: -3px; }
+a.row:hover .muted, a.row:focus-visible .muted { color: inherit; }
+.about { max-width: 62ch; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.5; margin: 28px 0 0; }
+.links a { text-decoration: underline; text-underline-offset: 4px; }
 .row .yr { font: 500 13px var(--font-mono); font-variant-numeric: tabular-nums; }
 .row h3 { font: 800 clamp(1.3rem, 3.2vw, 2.3rem)/1.05 var(--font-display); letter-spacing: -.03em; margin: 0; text-wrap: balance; }
 .row p { margin: 0; font-size: 16px; }
@@ -118,14 +126,25 @@ section { padding-top: clamp(40px, 7vw, 88px); }
       <p id="pitch">I build web and mobile systems: point-of-sale and finance front-ends, HR and check-in tools, and apps for the Battambang Provincial Hall.</p>
       <div class="cta">
         <a class="btn fill" href="#work">See the work</a>
+        <a class="btn" href="https://github.com/snoopylazy" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="#contact">Contact me</a>
       </div>
     </div>
   </header>
 
+  <section>
+    <div class="head"><h2>About</h2><p class="label">Who I am</p></div>
+    <p class="about">I'm a full-stack developer from Battambang. I build with Vue, Laravel, Node and Flutter, and I've delivered HR, check-in, POS and government apps for real users. I'm looking for a full-stack role where I can keep shipping production systems and learning from a strong team.</p>
+  </section>
+
   <section id="work">
     <div class="head"><h2>Selected work</h2><p class="label">Systems I have built or worked on</p></div>
     <ul class="work" id="workList"></ul>
+  </section>
+
+  <section>
+    <div class="head"><h2>Public code</h2><p class="label">Open on GitHub</p></div>
+    <div class="work" id="codeList"></div>
   </section>
 
   <section>
@@ -150,7 +169,12 @@ section { padding-top: clamp(40px, 7vw, 88px); }
       <code id="email">monthysintha4@gmail.com</code>
       <button id="copy" type="button">Copy email</button>
     </div>
-    <div class="links"><span>+855 11 637 618</span><span>Khmer · English</span></div>
+    <div class="links">
+      <a href="mailto:monthysintha4@gmail.com">Email</a>
+      <a href="https://github.com/snoopylazy" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:+85511637618">+855 11 637 618</a>
+      <span>Khmer · English</span>
+    </div>
   </section>
 </div>
 
@@ -162,6 +186,11 @@ const data = {
     { yr: "2025", title: "HR System", desc: "Internal human-resources system built for Ambel Cash.", tag: "Web app" },
     { yr: "2025", title: "Mission & Check-in", desc: "A mission request system and an app check-in tool for staff at Ambel Cash.", tag: "Web app" },
     { yr: "2025", title: "Support System", desc: "A support system for handling internal requests at Ambel Cash.", tag: "Web app" }
+  ],
+  code: [
+    { yr: "Dart", title: "chat_app", desc: "Mobile chat application written in Dart.", tag: "Mobile", url: "https://github.com/snoopylazy/chat_app" },
+    { yr: "Dart", title: "checkIn_app", desc: "Staff check-in mobile app written in Dart.", tag: "Mobile", url: "https://github.com/snoopylazy/checkIn_app" },
+    { yr: "C#", title: "Restaurant", desc: ".NET Windows Forms restaurant system, built as a Year 3 university assignment.", tag: "Desktop", url: "https://github.com/snoopylazy/Restaurant" }
   ],
   cols: [
     { h: "Front-end", items: ["Vue.js and React", "JavaScript, HTML, CSS", "Bootstrap 5 and Tailwind CSS"] },
@@ -175,8 +204,9 @@ const data = {
   ],
   edu: [
     { when: "2023 – 2026", role: "Bachelor's degree, Information Technology", text: "National University of Battambang." },
-    { when: "2024", role: "AWS Certified Cloud Practitioner", text: "Issued by Amazon Web Services Training and Certification." },
-    { when: "Sep 2024", role: "Cloud4Cambodia Battambang Program", text: "Intensive AWS Cloud Foundation boot camp at NUBB, completed with honor." },
+    { when: "Feb 2025", role: "AWS Certified Cloud Practitioner", text: "Issued by Amazon Web Services Training and Certification." },
+    { when: "Sep 2024", role: "Cloud4Cambodia Battambang Program", text: "Intensive AWS Cloud Foundation boot camp at NUBB, run with USAID and AWS Academy. Completed with honor." },
+    { when: "2022", role: "Grade A, national high school exam", text: "Commended by the Governor of Battambang for the result." },
     { when: "Nov 2024 – Jan 2025", role: "Cloud Computing and Machine Learning workshops", text: "Both completed at the National University of Battambang." }
   ]
 };
@@ -187,6 +217,13 @@ data.work.forEach(w => {
   const li = el("li", "row");
   li.append(el("span", "yr", w.yr), el("h3", "", w.title), el("p", "muted", w.desc), el("span", "tag", w.tag));
   wl.append(li);
+});
+const cl = document.getElementById("codeList");
+data.code.forEach(w => {
+  const a = el("a", "row");
+  a.href = w.url; a.target = "_blank"; a.rel = "noopener";
+  a.append(el("span", "yr", w.yr), el("h3", "", w.title), el("p", "muted", w.desc), el("span", "tag", w.tag));
+  cl.append(a);
 });
 const cols = document.getElementById("cols");
 data.cols.forEach(c => {
